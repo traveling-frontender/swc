@@ -9,7 +9,7 @@ import { fileURLToPath, URL } from 'node:url'
 export default ({ mode }: { mode: string }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
   return defineConfig({
-    base: '/swc',
+    base: '/swc/',
     plugins: [
       vue(),
       svgLoader(),

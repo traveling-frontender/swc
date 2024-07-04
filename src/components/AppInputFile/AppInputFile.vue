@@ -1,6 +1,6 @@
 <template>
   <div class="input-file">
-    <div class="input-file__content" v-if="file.length == 0">
+    <div class="input-file__content" v-if="!file">
       <input id="input-file" class="input-file__content-input" type="file" @change="uploadFile"/>
       <label for="input-file" class="input-file__content-label">
         <div class="input-file__content-icon-wrapper">
@@ -12,7 +12,7 @@
         </span>
       </label>
     </div>
-    <div class="input-file__preview" v-if="file.length > 0">
+    <div class="input-file__preview" v-if="file">
       <SvgIcon class="input-file__preview-icon" :icon="'file_small'" />
       <span class="input-file__preview-title">{{ file[0]?.name }}</span>
       <SvgIcon class="input-file__preview-close" :icon="'close_white'" @click="removeFile" />

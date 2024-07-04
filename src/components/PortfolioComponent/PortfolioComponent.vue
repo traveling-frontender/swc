@@ -32,7 +32,7 @@
       </div> 
        <swiper-slide v-for="(item, index) in projects" :key="index">
           <div class="portfolio__carousel-item" style="position: relative">
-            <img :src="`/src/assets/img/${item.image}`" />
+            <img src="@/assets/img/portfolio-1.png" alt="" />
           </div>
         </swiper-slide>
       <div class="portfolio__carousel-wave portfolio__carousel-wave_bottom">

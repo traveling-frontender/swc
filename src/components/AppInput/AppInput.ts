@@ -22,9 +22,9 @@ export default defineComponent({
   },
   emits: ['update:modelValue'],
   directives: {
-    mask: (el, binding) => {
+    mask: (el, binding: any, vNode: any, oldVnode) => {
       if(!binding.value) return
-      mask(el, binding)
+      mask(el, binding, vNode, oldVnode)
     }
   },
   setup(props, ctx) {
