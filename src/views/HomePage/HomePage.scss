@@ -1,0 +1,204 @@
+.home {
+  color: $white100;
+  &__greetings {
+    margin: 155px auto 0;
+    max-width: 910px;
+    @include centering;
+    flex-direction: column;
+    &-title {
+      @include heading(1);
+      white-space: pre-wrap;
+    }
+    &-description {
+      margin-top: 30px;
+      @include subtitle(1);
+      max-width: 392px;
+      white-space: pre-wrap;
+    }
+    &-actions {
+      display: flex;
+      margin-top: 50px;
+      gap: 20px;
+    }
+    &-order {
+      @include primaryButton;
+      padding: 16px 29.5px;
+      width: 186px;
+    }
+    &-generate {
+      @include secondaryButton;
+      padding: 16px 23.5px;
+      width: 186px;
+    }
+    &-advantages {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      gap: 110px;
+      margin-top: 100px;
+    }
+    &-advantage {
+      display: flex;
+      flex-direction: column;
+      &-value {
+        @include heading(2);
+      }
+      &-text {
+        @include text(2);
+        text-align: center;
+      }
+    }
+  }
+  &__services {
+    display: flex;
+    flex-direction: column;
+    max-width: 1216px;
+    margin: 197px auto 0;
+    &-title {
+      @include heading(3);
+      text-align: center;
+    }
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 60px;
+    }
+    &-item {
+      grid-column: span 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      &:last-child {
+        grid-column: span 2;
+      }
+      &-title {
+        @include heading(4);
+        margin-bottom: 23px;
+      }
+      &-link {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        color: $white100;
+        text-decoration: unset;
+        @include smallText(1);
+        margin-top: auto;
+      }
+    }
+  }
+  &__technologies {
+    display: flex;
+    justify-content: center;
+    max-width: 1216px;
+    margin: 240px auto 0;
+  }
+  &__clients {
+    margin-top: 240px;
+  }
+  &__portfolio {
+    margin-top: 240px;
+  }
+  &__facilities {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1216px;
+    margin: 240px auto 0;
+  }
+  &__vacancies {
+    display: flex;
+    flex-direction: column;
+    max-width: 1216px;
+    margin: 197px auto 0;
+    &-title {
+      @include heading(3);
+      text-align: center;
+    }
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 60px;
+    }
+    &-all {
+      @include primaryButton;
+      text-decoration: none;
+      width: 186px;
+      align-self: start;
+      margin: 60px auto 0 auto;
+    }
+  }
+  &__feedback {
+    max-width: 1216px;
+    margin: 240px auto;
+  }
+  @include tablet {
+    &__services, &__technologies, &__facilities, &__vacancies, &__feedback {
+      padding: 0 20px
+    }
+  }
+  @include smallTablet {
+    &__greetings {
+      margin: 90px auto 0;
+    }
+    &__services, &__vacancies, &__facilities {
+      margin: 140px auto 0;
+    }
+    &__clients, &__portfolio {
+      margin-top: 160px;
+    }
+    &__technologies, &__facitilies, &__feedback {
+      margin: 160px auto;
+    }
+    &__services {
+      &-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  @include tablet {
+    &__vacancies {
+      &-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  @include mobile {
+    &__greetings {
+      &-advantages {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+      &-actions {
+        flex-direction: column;
+      }
+    }
+    &__services {
+      &-list {
+        grid-template-columns: 1fr;
+      }
+      &-item {
+        grid-column: auto !important;
+      }
+    }
+    &__greetings {
+      margin: 45px auto 0;
+    }
+    &__services, &__vacancies, &__facilities {
+      margin: 70px auto 0;
+    }
+    &__clients, &__portfolio {
+      margin-top: 80px;
+    }
+    &__technologies, &__facitilies, &__feedback {
+      margin: 80px auto;
+    }
+    &__vacancies {
+      &-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

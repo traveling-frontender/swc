@@ -1,0 +1,37 @@
+.clients {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    @include heading(3);
+    text-align: center;
+  }
+  &__carousel {
+    margin-top: 89px;
+  }
+  ::v-deep(.swiper-slide) {
+    min-width: 200px !important;
+    height: 104px;
+  }
+  ::v-deep(.swiper-wrapper) {
+    width: 100%;
+  }
+  .swiper {
+    padding-bottom: 70px;
+  }
+  .swiper-container {
+    width: calc(100vw - 70px);
+    max-width: 600px;
+  }
+  
+  .swiper-wrapper {
+    list-style: none;
+    padding: 0;
+  }
+  
+  @include mobile {
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.vacancies {
+  display: flex;
+  flex-direction: column;
+  max-width: 1216px;
+  margin: 100px auto 150px;
+  color: $white100;
+  &-title {
+    @include centering;
+    @include heading(3)
+  }
+  &__list {
+    display: grid;
+    margin-top: 63px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  @include desktop {
+    padding: 0 30px;
+  }
+
+  @include tablet {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @include mobile {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
+}

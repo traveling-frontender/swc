@@ -1,0 +1,119 @@
+.footer {
+  width: 100%;
+  background: $bg;
+  color: $white100;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  &__top {
+    display: flex;
+    flex-direction: column;
+    max-width: 1216px;
+    min-height: 587px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+  &__info {
+    display: grid;
+    grid-template-columns: 40% 19.5% auto auto;
+    gap: 80px;
+    margin-top: 40px;
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    &-address,
+    &-contacts,
+    &-services,
+    &-projects,
+    &-about {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    &-title {
+      display: flex;
+      align-items: center;
+      @include text(3);
+      color: $white100;
+      text-decoration: unset;
+    }
+    &-text {
+      @include text(4);
+      color: $white100;
+      text-decoration: unset;
+    }
+    &-address {
+      gap: 0;
+    }
+    &-contacts {
+      gap: 12px;
+    }
+  }
+  &__copyright {
+    display: flex;
+    margin-top: auto;
+    height: 78px;
+    border-top: 1px solid #303849;
+    @include smallText(2);
+    opacity: .5;
+    &-content {
+      display: flex;
+      gap: 63px;
+      max-width: 1216px;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 30px;
+    }
+    &-link {
+      color: $white100;
+      text-decoration: unset;
+    }
+  }
+  @include desktop {
+    &__wrapper {
+      padding: 0 30px;
+    }
+    &__info {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      &-address {
+        row-gap: 8px;
+      }
+    }
+  }
+  @include smallTablet {
+    &__info {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    &__copyright {
+      margin-top: 15px;
+    }
+  }
+  @include mobile {
+    &__info {
+      grid-template-columns: 1fr;
+      row-gap: 25px;
+    }
+    &-address,
+    &-contacts,
+    &-services,
+    &-projects,
+    &-about {
+      gap: 8px;
+    }
+    &__copyright {
+      height: auto;
+      padding-bottom: 16px;
+      &-content {
+        flex-direction: column;
+        row-gap: 15px;
+      }
+    }
+  }
+}

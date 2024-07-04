@@ -1,0 +1,127 @@
+.app-select {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  text-align: left;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__name {
+    white-space: nowrap;
+    sup {
+    }
+  }
+  &__empty {
+    margin: 10px 0;
+  }
+  &.error {
+    .v-select {
+      .vs__dropdown-toggle {
+      }
+    }
+  }
+  &__error {
+  }
+  &_fill {
+    .v-select.vs--open .vs__dropdown-menu {
+      background: #282c34;
+    }
+  }
+}
+.v-select {
+  min-width: 51px;
+  * {
+    box-sizing: border-box;
+    box-shadow: unset;
+    @include text(2);
+    color: $white100;
+  }
+  &.vs--single.vs--open {
+    .vs__selected {
+      opacity: 1;
+    }
+  }
+  &.vs--open {
+    .vs__dropdown-menu {
+      @include text(2);
+      color: $white100;
+      background: rgba(34, 42, 57, 0.3);
+      width: 100%;
+      margin-top: 4px;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 2px 7px 0 #1F1F2240;
+    }
+  }
+  .vs__dropdown-toggle {
+    border: none;
+    height: 32px;
+    transition: border-color 0.2s linear;
+    padding: 0;
+  }
+  .vs__selected {
+    width: 100%;
+    height: 32px;
+    margin: 0;
+    padding: 8px 0;
+    background: transparent;
+    border: none;
+    border-radius: unset;
+    color: $white100;
+    & + .vs__search {
+      margin-left: 12px;
+    }
+  }
+  .vs__selected-options {
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    min-width: 22px;
+    cursor: pointer;
+  }
+  .vs__search {
+    display: none;
+    margin: 0;
+  }
+  .vs__actions {
+    width: 34px;
+    margin: 0;
+    padding: 5px 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    svg {
+      fill: transparent;
+    }
+    button {
+      width: 0;
+      margin: 0;
+    }
+  }
+  .vs__dropdown-menu {
+    min-width: 64px;
+    z-index: 999;
+    transition: border-color 0.2s linear;
+    border-top-color: transparent;
+    padding: 0;
+  }
+  .vs__dropdown-option {
+    margin: 0;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    transition: color 0.2s linear;
+    position: relative;
+  }
+  .vs__loader {
+    position: relative;
+    top: -10px;
+    left: -22px;
+  }
+}

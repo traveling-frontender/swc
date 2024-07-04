@@ -1,0 +1,183 @@
+.service-view {
+  color: $white100;
+  margin-bottom: 140px;
+  &__greetings {
+    margin: 226px auto 0;
+    max-width: 701px;
+    @include centering;
+    flex-direction: column;
+    &-title {
+      @include heading(3);
+      text-align: center;
+    }
+    &-subtitle {
+      @include subtitle(1);
+      margin-top: 24px;
+      max-width: 600px;
+    }
+    &-order {
+      @include primaryButton;
+      width: 186px;
+      margin-top: 50px;
+    }
+  }
+  
+  &__advantages {
+    display: flex;
+    flex-direction: column;
+    max-width: 1216px;
+    margin: 200px auto 0;
+    &-title {
+      @include heading(3);
+      text-align: center;
+    }
+  }
+  &__list {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    &-item{
+      &-title {
+        @include subtitle(3);
+        display: block;
+        max-width: 289px;
+        margin-top: 24px;
+      }
+      &-description {
+        @include text(4);
+        display: block;
+        margin-top: 12px;
+        max-width: 305px;
+      }
+      &-progress {
+        display: flex;
+      }
+      &-order {
+        @include text(6);
+        @include centering;
+        width: 40px;
+        height: 40px;
+        border: 1px solid $white100;
+        border-radius: 50px;
+      }
+      &-line {
+        position: relative;
+        flex: 1;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          height: 1px;
+          background: $white100;
+        }
+      }
+    }
+  }
+  &__technologies {
+    max-width: 1216px;
+    margin: 240px auto 0;
+  }
+  &__cost {
+    margin: 240px auto 0;
+    max-width: 1216px;
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+    }
+    &-info {
+      display: flex;
+      flex-direction: column
+    }
+    &-title {
+      @include heading(3);
+    }
+    &-subtitle, &-description {
+      @include subtitle(2)
+    }
+    &-button {
+      @include primaryButton;
+      width: 186px;
+      margin-top: auto;
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+    }
+  }
+  &__stages {
+    max-width: 1216px;
+    margin: 240px auto 0;
+  }
+  &__portfolio {
+    margin: 240px auto 0;
+  }
+  &__reviews {
+    margin: 240px auto 0;
+  }
+  &__feedback {
+    max-width: 1216px;
+    margin: 240px auto 0;
+  }
+  @include desktop {
+    padding: 0 30px;
+  }
+  @include tablet {
+    &__greetings, &__stages, &__technologies, &__cost, &__reviews, &__feedback {
+      margin: 140px auto 0;
+    }
+    &__portfolio {
+      margin-top: 140px;
+    }
+    &__advantages {
+      margin: 90px auto 0;
+    }
+    &__list {
+      margin-top: 45px;
+      grid-template-columns: 1fr;
+      row-gap: 16px;
+      justify-items: center;
+      &-item {
+        &-line {
+          display: none;
+        }
+      }
+    }
+    &__cost {
+      &-wrapper {
+        flex-direction: column;
+        row-gap: 16px;
+        padding: 25px;
+      }
+      &-info {
+        row-gap: 8px;
+      }
+    }
+  }
+  @include mobile {
+    &__greetings, &__stages, &__technologies, &__cost, &__portfolio, &__reviews, &__feedback {
+      margin: 90px auto 0;
+    }
+    &__cost {
+      &-wrapper {
+        padding: 12px;
+      }
+      &-button {
+        align-self: start;
+      }
+      &-item {
+        column-gap: 8px;
+      }
+    }
+  }
+}

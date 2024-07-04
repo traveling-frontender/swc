@@ -1,0 +1,55 @@
+.portfolio {
+  color: $white100;
+  display: flex;
+  flex-direction: column;
+  max-width: 1216px;
+  margin: 70px auto 150px;
+  &__title {
+    @include heading(3);
+    text-align: center;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    row-gap: 50px;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    &-image {
+      img {
+        width: 100%;
+        max-height: 450px;
+        object-fit: cover;  
+      }
+    }
+    &-title {
+      @include heading(5);
+      display: block;
+    }
+    &-description {
+      display: block;
+      margin-top: 18px;
+      @include text(5)
+    }
+    &-button {
+      margin-top: 30px;
+    }
+  }
+  @include desktop {
+    padding: 0 30px;
+  }
+  @include mobile {
+    &__item {
+      grid-template-columns: 1fr;
+      row-gap: 16px;
+      &-image {
+        img {
+          max-height: 300px;
+        }
+      }
+    }
+  }
+}

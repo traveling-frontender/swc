@@ -1,0 +1,52 @@
+@mixin button {
+  @include resetButton;
+  @include buttonText(1);
+  @include centering;
+  height: 50px;
+  border: 1px solid $white100;
+}
+
+@mixin primaryButton {
+  @include button;
+  background: $white100;
+  color: $black;
+  border-radius: 10px;
+  &:hover {
+    background: transparent;
+    color: $white100;
+  }
+  &:disabled {
+    background: $white100;
+    color: $black;
+    cursor: unset;
+    opacity: 0.5;
+  }
+}
+
+@mixin secondaryButton {
+  @include button;
+  background: transparent;
+  color: $white100;
+  border-radius: 10px;
+  &:hover {
+    background: $white100;
+    color: $black;
+  }
+  &:disabled {
+    background: transparent;
+    color: $white100;
+    cursor: unset;
+    opacity: 0.5;
+  }
+}
+
+@mixin input {
+  &:focus {
+
+  }
+  &::placeholder {
+    // color: $white100
+  }
+  &.error {
+  }
+}

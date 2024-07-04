@@ -1,0 +1,57 @@
+.contacts {
+  color: $white100;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 1216px;
+    margin: 70px auto 0;
+  }
+  &__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $stroke;
+    }
+  } 
+  &-title {
+    @include heading(3)
+  }
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 60px;
+    margin-top: 80px;
+    &-item {
+      display: flex;
+      flex-direction: column;
+      &-title {
+        @include heading(5)
+      }
+      &-description {
+        @include smallText(1);
+        margin-top: 4px;
+      }
+    }
+  }
+  &__feedback {
+    max-width: 1216px;
+    margin: 80px auto 150px;
+  }
+  @include desktop {
+    padding: 0 30px;
+  }
+  @include smallTablet {
+    &__info {
+      grid-template-columns: 1fr;
+    }
+  }
+}

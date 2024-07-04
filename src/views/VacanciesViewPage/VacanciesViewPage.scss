@@ -1,0 +1,87 @@
+.vacancy {
+  color: $white100;
+  margin-bottom: 240px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 1216px;
+    margin: 70px auto 0;
+  }
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $stroke;
+    }
+  }
+  &-title {
+    @include heading(3)
+  }
+  &-schedule {
+    @include centering;
+    text-decoration: unset;
+    @include text(1);
+    color: $white100;
+    width: 186px;
+    height: 42px;
+    border-radius: 100px;
+    border: 1px solid $stroke;
+  }
+  &__info {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    &-item {
+      &-title {
+        @include heading(5);
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin-top: 24px;
+    &-item {
+      position: relative;
+      padding-left: 28px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: 0;
+        width: 20px;
+        height: 1px;
+        background: $white100;
+      }
+      &-text {
+        @include text(6)
+      }
+    }
+
+  }
+  &__feedback {
+    max-width: 1216px;
+    margin: 100px auto 0;
+  }
+  @include desktop {
+    padding: 0 30px;
+  }
+  @include mobile {
+    &__header {
+      flex-direction: column;
+      align-items: start;
+      row-gap: 16px;
+    }
+  }
+}

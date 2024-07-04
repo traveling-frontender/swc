@@ -1,0 +1,75 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .6);
+  z-index: 999;
+  &__wrapper {
+    width: 392px;
+    margin: 0 auto;
+    background: rgba(18, 23, 33, 1);
+    padding: 20px 24px;
+    border-radius: 20px;
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    &-title {
+      color: #fff;
+      @include heading(4)
+    }
+    &-close {
+      cursor: pointer;
+    }
+    &-fields {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+    &-time {
+      position: relative;
+    }
+    &-select {
+      position: absolute;
+      right: 0;
+      top: 2px;
+      width: 70px;
+      height: 45px;
+      padding: 8px 8px;
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.08);
+      --vs-dropdown-bg: #282c34;
+    }
+  }
+  &__checkbox {
+    margin-top: 40px;
+  }
+  &__button {
+    @include primaryButton;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .vs__dropdown-menu{
+    background: $black !important;
+  }
+  @include mobile {
+    &__wrapper {
+      &-select {
+        width: 56px;
+        height: 45px;
+        padding: 7px 4px;
+      }
+    }
+  }
+}

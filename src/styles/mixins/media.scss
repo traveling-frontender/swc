@@ -1,0 +1,49 @@
+@mixin screen($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin smallMobile {
+  @include screen(320px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include screen(578px) {
+    @content;
+  }
+}
+
+@mixin smallTablet {
+  @include screen(768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include screen(1024px) {
+    @content;
+  }
+}
+
+@mixin notebook {
+  @include screen(1367px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include screen(1600px) {
+    @content;
+  }
+}
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+  $k: ($f-max - $f-min)/($v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+
+  $b: $b * 1px;
+
+  @return calc( #{$k} * 100vw + #{$b} );
+}

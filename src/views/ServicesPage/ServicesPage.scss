@@ -1,0 +1,53 @@
+.services {
+  display: flex;
+  flex-direction: column;
+  max-width: 1216px;
+  margin: 70px auto 150px auto;
+  &-title {
+    @include heading(3);
+    text-align: center;
+    color: $white100
+  }
+  &__list {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    &-item {
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      column-gap: 96px;
+    }
+    &-info {
+      color: $white100;
+      display: flex;
+      flex-direction: column;
+      &-title {
+        @include heading(5);
+      }
+      &-description {
+        margin-top: 21px;
+        @include smallText(3)
+
+      }
+    }
+    &-icon {
+      width: 70px;
+    }
+  }
+  @include tablet {
+    padding: 0 30px;
+  }
+  @include mobile {
+    &__list {
+      margin-top: 50px;
+      &-item {
+        flex-direction: column;
+        padding: 20px;
+        row-gap: 15px;
+      }
+    }
+  
+  }
+}

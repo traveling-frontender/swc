@@ -1,0 +1,85 @@
+.solutions {
+  color: $white100;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 1216px;
+    margin: 100px auto 240px;
+  }
+  &-title {
+    @include heading(3);
+    @include centering;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 63px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background-color: linear-gradient($purpleGradient);
+    @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+      -webkit-backdrop-filter: blur(150px);
+      backdrop-filter: blur(150px);
+    }
+    border-radius: 20px;
+    &-header {
+      position: relative;
+      height: 130px;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $stroke;
+      }
+    }
+    &-title {
+      @include heading(4)
+    }
+    &-details {
+      margin-top: 24px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+      &-text {
+        @include text(5)
+      }
+    }
+    &-more {
+      @include resetButton;
+      color: $white100;
+      text-decoration: none;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      column-gap: 7px;
+      span {
+        @include smallText(1)
+      }
+    }
+  }
+  
+  @include desktop {
+    padding: 0 30px;
+  }
+  @include tablet {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @include mobile {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+    &__wrapper {
+      margin: 60px auto 140px;
+    }
+  }
+}

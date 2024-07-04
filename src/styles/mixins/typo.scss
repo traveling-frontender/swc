@@ -1,0 +1,423 @@
+@mixin text($val) {
+  @if $val == 1 {
+    font-family: $inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    letter-spacing: -0.03em;
+    text-align: left;
+  } @else if $val == 2 {
+    font-family: $inter;
+    @include responsive-font(18, 15, 21.78, 19);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    text-align: left;
+  } @else if $val == 3 {
+    font-family: $montserrat;
+    @include responsive-font(18, 15, 21.78, 19);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: left;
+  } @else if $val == 4 {
+    font-family: $montserrat;
+    @include responsive-font(18, 15, 21.78, 19);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-align: left;
+  } @else if $val == 5 {
+    font-family: $montserrat;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: left;
+  } @else if $val == 6 {
+    font-family: $montserrat;
+    @include responsive-font(20, 16, 30, 26);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: left;
+  } @else if $val == 7 {
+    font-family: $montserrat;
+    @include responsive-font(18, 15, 21.78, 19);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    text-align: left;
+  }
+}
+
+@mixin smallText($val) {
+  @if $val == 1 {
+    font-family: $montserrat;
+    @include responsive-font(16, 14, 19.5, 21);
+    font-weight: 500;
+    text-align: left;
+  } @else if $val == 2 {
+    font-family: $inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px;
+    letter-spacing: -0.03em;
+    text-align: left;
+  } @else if $val == 3 {
+    font-family: $montserrat;
+    @include responsive-font(16, 12, 24, 20);
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+  } @else if $val == 4 {
+    font-family: $inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.6px;
+    letter-spacing: -0.03em;
+    text-align: left;
+  } @else if $val == 5 {
+    font-family: $montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: -0.02em;
+    text-align: left;
+  }
+}
+
+@mixin heading($val) {
+  @if $val == 1 {
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: 700;
+    @include responsive-font(75, 48, 91.43, 70);
+  } @else if $val == 2 {
+    font-family: $montserrat;
+    @include responsive-font(40, 28, 48.76, 36);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  } @else if $val == 3 {
+    font-family: $lato;
+    @include responsive-font(48, 32, 57.6, 48);
+    font-weight: 800;
+    text-align: left;
+  } @else if $val == 4 {
+    font-family: $inter;
+    @include responsive-font(32, 24, 38.73, 30);
+    font-weight: 700;
+    text-align: left;
+  } @else if $val == 5 {
+    font-family: $lato;
+    @include responsive-font(32, 24, 38.4, 30);
+    font-weight: 800;
+    text-align: left;
+  }
+}
+
+@mixin subtitle($val) {
+  @if $val == 1 {
+    font-family: $montserrat;
+    @include responsive-font(20, 15, 24.38, 20);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+  }
+  @if $val == 2 {
+    @include responsive-font(20, 15, 24.38, 20);
+    font-family: $montserrat;
+    font-weight: 500;
+    text-align: left;
+  }
+  @if $val == 3 {
+    font-family: $inter;
+    font-style: normal;
+    font-weight: 700;
+    text-align: left;
+    font-size: 28px;
+    line-height: 33.89px;
+  }
+  @if $val == 4 {
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: 700;
+    text-align: left;
+    font-size: 24px;
+    line-height: 29.26px;
+  }
+  //@else if $val == 2 {
+  //  font-family: $montserrat;
+  //  font-style: normal;
+  //  font-size: 18px;
+  //  font-weight: 700;
+  //  line-height: 21.94px;
+  //  text-align: left;
+  //} @else if $val == 3 {
+  //  font-family: $montserrat;
+  //  font-style: normal;
+  //  text-align: left;
+  //  font-size: 18px;
+  //  font-weight: 500;
+  //  line-height: 21.94px;
+  //  letter-spacing: -0.03em;
+  //}
+}
+
+@mixin buttonText($val) {
+  @if $val == 1 {
+    font-family: $inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18.15px;
+  }
+}
+@mixin responsive-font($pcSize, $mobSize, $pcLineHeight, $mobLineHeight) {
+  $maxWidth: 1600;
+	$addSize: $pcSize - $mobSize;
+  $addLineHeight: $pcLineHeight - $mobLineHeight;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+	line-height: calc(#{$mobLineHeight + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+///
+//@mixin body($val) {
+//  @if $val == 1 {
+//    font-family: $montserrat;
+//    font-size: 20px;
+//    font-weight: 500;
+//    line-height: 30px;
+//    text-align: left;
+//  } @else if $val == 2 {
+//    font-family: $montserrat;
+//    font-size: 20px;
+//    font-weight: 500;
+//    line-height: 24.38px;
+//    text-align: left;
+//  } @else if $val == 3 {
+//    font-family: $montserrat;
+//    font-size: 18px;
+//    font-weight: 400;
+//    line-height: 21.94px;
+//    text-align: left;
+//  } @else if $val == 4 {
+//    font-family: $montserrat;
+//    font-size: 17px;
+//    font-weight: 500;
+//    line-height: 24px;
+//    text-align: left;
+//  } @else if $val == 5 {
+//    font-family: $montserrat;
+//    font-size: 16px;
+//    font-weight: 500;
+//    line-height: 24px;
+//    letter-spacing: -0.02em;
+//    text-align: left;
+//  }
+//}
+//
+//@mixin small($val) {
+//  @if $val == 1 {
+//    font-family: $montserrat;
+//    font-size: 16px;
+//    font-weight: 500;
+//    line-height: 19.5px;
+//    text-align: left;
+//  } @else if $val == 2 {
+//    font-family: $montserrat;
+//    font-size: 14px;
+//    font-weight: 500;
+//    line-height: 17.07px;
+//    letter-spacing: -0.03em;
+//    text-align: left;
+//  }
+//}
+//
+//@mixin buttonText($val) {
+//  @if $val == 1 {
+//    font-family: $montserrat;
+//    font-size: 20px;
+//    font-weight: 600;
+//    line-height: 24.38px;
+//    text-align: left;
+//  } @else if $val == 2 {
+//    font-family: $lato;
+//    font-size: 15px;
+//    font-weight: 800;
+//    line-height: 18px;
+//    letter-spacing: 0.03em;
+//    text-align: left;
+//  }
+//}
+//
+//@mixin buttonHeaderText {
+//  font-family: $lato;
+//  font-size: 18px;
+//  font-weight: 700;
+//  line-height: 21.6px;
+//  text-align: left;
+//}
+
+
+
+//
+//@mixin heading($val) {
+//  @if $val == 1 {
+//    //ok
+//    font-family: $montserrat;
+//    font-style: normal;
+//    font-weight: 700;
+//    font-size: 75px;
+//    line-height: 91.43px;
+//    text-align: left;
+//  } @else if $val == 2 {
+//    //ok
+//    font-family: $lato;
+//    font-style: normal;
+//    font-size: 48px;
+//    font-weight: 800;
+//    line-height: 57.6px;
+//    text-align: left;
+//  } @else if $val == 3 {
+//    //цифры
+//    font-family: $montserrat;
+//    font-style: normal;
+//    text-align: left;
+//    font-size: 40px;
+//    line-height: 48px;
+//    font-weight: 700;
+//  } @else if $val == 4 {
+//    //другой
+//    font-family: $inter;
+//    font-style: normal;
+//    font-size: 32px;
+//    font-weight: 800;
+//    line-height: 38.73px;
+//    text-align: left;
+//  }
+//}
+//
+////@mixin subtitle($val) {
+////  @if $val == 1 {
+////    font-family: $montserrat;
+////    font-style: normal;
+////    font-weight: 700;
+////    text-align: left;
+////    font-size: 24px;
+////    line-height: 29.26px;
+////  } @else if $val == 2 {
+////    font-family: $montserrat;
+////    font-style: normal;
+////    font-size: 18px;
+////    font-weight: 700;
+////    line-height: 21.94px;
+////    text-align: left;
+////  } @else if $val == 3 {
+////    font-family: $montserrat;
+////    font-style: normal;
+////    text-align: left;
+////    font-size: 18px;
+////    font-weight: 500;
+////    line-height: 21.94px;
+////    letter-spacing: -0.03em;
+////  }
+////}
+//@mixin subtitle($val) {
+//  @if $val == 1 {
+//    font-family: $inter;
+//    font-style: normal;
+//    font-weight: 700;
+//    text-align: left;
+//    font-size: 28px;
+//    line-height: 33.89px;
+//  } @else if $val == 2 {
+//    font-family: $montserrat;
+//    font-style: normal;
+//    font-size: 18px;
+//    font-weight: 700;
+//    line-height: 21.94px;
+//    text-align: left;
+//  } @else if $val == 3 {
+//    font-family: $montserrat;
+//    font-style: normal;
+//    text-align: left;
+//    font-size: 18px;
+//    font-weight: 500;
+//    line-height: 21.94px;
+//    letter-spacing: -0.03em;
+//  }
+//}
+//
+//@mixin body($val) {
+//  @if $val == 1 {
+//    font-family: $montserrat;
+//    font-size: 20px;
+//    font-weight: 500;
+//    line-height: 30px;
+//    text-align: left;
+//  } @else if $val == 2 {
+//    font-family: $montserrat;
+//    font-size: 20px;
+//    font-weight: 500;
+//    line-height: 24.38px;
+//    text-align: left;
+//  } @else if $val == 3 {
+//    font-family: $montserrat;
+//    font-size: 18px;
+//    font-weight: 400;
+//    line-height: 21.94px;
+//    text-align: left;
+//  } @else if $val == 4 {
+//    font-family: $montserrat;
+//    font-size: 17px;
+//    font-weight: 500;
+//    line-height: 24px;
+//    text-align: left;
+//  } @else if $val == 5 {
+//    font-family: $montserrat;
+//    font-size: 16px;
+//    font-weight: 500;
+//    line-height: 24px;
+//    letter-spacing: -0.02em;
+//    text-align: left;
+//  }
+//}
+//
+//@mixin small($val) {
+//  @if $val == 1 {
+//    font-family: $montserrat;
+//    font-size: 16px;
+//    font-weight: 500;
+//    line-height: 19.5px;
+//    text-align: left;
+//  } @else if $val == 2 {
+//    font-family: $montserrat;
+//    font-size: 14px;
+//    font-weight: 500;
+//    line-height: 17.07px;
+//    letter-spacing: -0.03em;
+//    text-align: left;
+//  }
+//}
+//
+//@mixin buttonText($val) {
+//  @if $val == 1 {
+//    font-family: $montserrat;
+//    font-size: 20px;
+//    font-weight: 600;
+//    line-height: 24.38px;
+//    text-align: left;
+//  } @else if $val == 2 {
+//    font-family: $lato;
+//    font-size: 15px;
+//    font-weight: 800;
+//    line-height: 18px;
+//    letter-spacing: 0.03em;
+//    text-align: left;
+//  }
+//}
+//
+//@mixin buttonHeaderText {
+//  font-family: $lato;
+//  font-size: 18px;
+//  font-weight: 700;
+//  line-height: 21.6px;
+//  text-align: left;
+//}
