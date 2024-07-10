@@ -1,1 +1,0 @@
-@property --my-angle{syntax: "<angle>"; inherits: false; initial-value: 0turn;}@keyframes gradient-2b7da0a2{to{--my-angle: 1turn }}@keyframes rotate-2b7da0a2{0%{transform:rotate(0)}to{transform:rotate(360deg)}}@-webkit-keyframes rotate-2b7da0a2{0%{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(360deg)}}
