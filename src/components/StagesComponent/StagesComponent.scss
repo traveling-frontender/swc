@@ -10,7 +10,7 @@
       &-title {
         display: block;
         @include heading(3);
-        max-width: 450px;
+        max-width: 550px;
       }
       &-button {
         @include primaryButton;

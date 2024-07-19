@@ -2730,6 +2730,11 @@ headers-polyfill@^4.0.2:
   resolved "https://registry.npmjs.org/headers-polyfill/-/headers-polyfill-4.0.3.tgz"
   integrity sha512-IScLbePpkvO846sIwOtOTDjutRMWdXdJmXdMvk6gCBHxFO8d+QKOQedyZSxFTTFYRSmlgSTDtXqqq4pcenBXLQ==
 
+highlight.js@^10.3.2:
+  version "10.7.3"
+  resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.3.tgz"
+  integrity sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==
+
 html-encoding-sniffer@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/html-encoding-sniffer/-/html-encoding-sniffer-4.0.0.tgz"
@@ -4357,6 +4362,13 @@ vue@^2.6.10:
   dependencies:
     "@vue/compiler-sfc" "2.7.16"
     csstype "^3.1.0"
+
+vue3-highlightjs@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/vue3-highlightjs/-/vue3-highlightjs-1.0.5.tgz"
+  integrity sha512-Q4YNPXu0X5VMBnwPVOk+IQf1Ohp9jFdMitEAmzaz8qVVefcQpN6Dx4BnDGKxja3TLDVF+EgL136wC8YzmoCX9w==
+  dependencies:
+    highlight.js "^10.3.2"
 
 w3c-xmlserializer@^5.0.0:
   version "5.0.0"

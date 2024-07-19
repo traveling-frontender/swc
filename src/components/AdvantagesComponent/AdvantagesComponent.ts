@@ -1,14 +1,14 @@
 import {defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import {Autoplay, Pagination } from 'swiper/modules'
+import { FreeMode } from 'swiper/modules';
 import AppCard from '@/components/AppCard/AppCard.vue'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 
 export default defineComponent({
-  name: 'FacilitiesComponent',
+  name: 'AdvantagesComponent',
   components: {
     Swiper,
     SwiperSlide,
@@ -18,7 +18,7 @@ export default defineComponent({
     const { t } = useI18n();
     return {
       t,
-      modules: [Pagination, Autoplay],
+      modules: [FreeMode]
     }
   },
 })

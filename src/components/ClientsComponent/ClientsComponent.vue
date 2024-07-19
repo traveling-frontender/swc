@@ -3,23 +3,26 @@
     <span class="clients__title">{{ t('clients.title') }}</span>
     <div class="clients__carousel">
       <swiper
-        :slidesPerView="6"
+        :slidesPerView="'auto'"
+        :speed="5000"
+        :autoplay="{
+          delay: 0,
+          disableOnInteraction: false,
+        }"
         :breakpoints="{
         '320': {
-          slidesPerView: 1,
           spaceBetween: 30,
         },
         '578': {
-          slidesPerView: 3,
           spaceBetween: 60,
         },
 
         '1024': {
-          slidesPerView: 6,
           spaceBetween: 180
         }
     }"
-        :centeredSlides="false"
+        :modules="modules"
+        :centeredSlides="true"
         :loop="true"
         :spaceBetween="180"
         :pagination="{

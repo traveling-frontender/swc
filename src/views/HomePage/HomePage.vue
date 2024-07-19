@@ -1,7 +1,14 @@
 <template>
   <div class="home">
     <div class="home__greetings">
-      <span class="home__greetings-title">{{ t('home.title') }}</span>
+      <div class="home__greetings-title">
+        <div>
+          <span class="typingEffect__line1">{{ t('home.title.create') }}</span>
+        </div>
+        <div>
+          <span class="typingEffect__line2">{{ t('home.title.second') }}</span>
+        </div>
+      </div>
       <span class="home__greetings-description">{{
         t('mock.description')
       }}</span>

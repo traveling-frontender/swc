@@ -1,4 +1,4 @@
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 
@@ -6,18 +6,18 @@ import { useI18n } from 'vue-i18n'
 export default defineComponent({
   name: 'AppCheckbox',
   props: {
-    label: String
+    label: String,
+    modelValue: Boolean,
+    error: Boolean
   },
-  setup() {
+  setup(props, ctx) {
     const { t } = useI18n();
-    const isCheck = ref(false);
     const changeState = () => {
-      isCheck.value = !isCheck.value
+      ctx.emit('update:modelValue', !props.modelValue);
     }
     return {
       t,
-      isCheck,
-      changeState
+      changeState,
     }
   },
 })

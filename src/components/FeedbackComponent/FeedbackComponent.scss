@@ -26,9 +26,6 @@
       -webkit-backdrop-filter: blur(150px);
       backdrop-filter: blur(150px);
     }
-    &:before {
-      display: none;
-    }
   }
   &-title {
     @include heading(3);
@@ -38,7 +35,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 20px;
     &-item {
       &:last-child {
         grid-column: span 2;

@@ -8,7 +8,12 @@
         '--swiper-pagination-bullet-size': '10px',
         '--swiper-pagination-bullet-inactive-opacity': '50%',
         '--swiper-pagination-bullet-inactive-color': '#fff'
-      }" 
+      }"
+        :speed="1200"
+        :autoplay="{
+          delay: 20000,
+          disableOnInteraction: false,
+        }"
         :slidesPerView="1"
         :centeredSlides="false"
         :pagination="{
@@ -23,9 +28,15 @@
         <swiper-slide v-for="i in 4" :key="i">
           <div class="facilities__carousel-item">
             <div class="facilities__carousel-images">
-              <img src="@/assets/img/facilities-1.png" alt="" />
-              <img src="@/assets/img/facilities-2.png" alt="" />
-              <img src="@/assets/img/facilities-3.png" alt="" />
+              <div class="facilities__carousel-image">
+                <img src="@/assets/img/facilities-1.png" alt="" />
+              </div>
+              <div class="facilities__carousel-image">
+                <img src="@/assets/img/facilities-2.png" alt="" />
+              </div>
+              <div class="facilities__carousel-image">
+                <img src="@/assets/img/facilities-3.png" alt="" />
+              </div>
             </div>
             <div class="facilities__carousel-info">
               <div class="facilities__carousel-title">

@@ -1,3 +1,15 @@
+
+@keyframes background {
+  50% {
+    background: #EB0AFF;
+    box-shadow: 0 -200px 100px -100px #00B3FF inset;
+  }
+}
+// @keyframes gradient {   
+//   to {
+//     --my-angle: 1turn
+//   }
+// }
 @mixin centering {
   display: flex;
   justify-content: center;
@@ -31,4 +43,10 @@
   &[type=number] {
     -moz-appearance: textfield;
   }
+}
+
+@mixin borderAnimation {
+  background: #00B3FF;
+  box-shadow: 0 -200px 100px -120px #EB0AFF inset;
+  animation: background 5s infinite alternate;
 }

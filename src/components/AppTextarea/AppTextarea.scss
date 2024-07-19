@@ -5,6 +5,7 @@
     display: flex;
     position: relative;
     background: rgba(255, 255, 255, .12); 
+    border: 1px solid transparent;
     border-radius: 10px;
     &_white-placeholder textarea::placeholder {
       color: $white100
@@ -38,6 +39,17 @@
       outline: none;
       resize: none;
     }
+    &_invalid {
+      &:before {
+        display: none;
+      }
+      border-color: #ff4c4c
+    }
+  }
+  &__error {
+    margin-top: 8px;
+    color: #ff4c4c    ;
+    font-size: 14px;
   }
   @include mobile {
     &__field textarea {

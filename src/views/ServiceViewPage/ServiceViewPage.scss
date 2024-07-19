@@ -3,7 +3,6 @@
   margin-bottom: 140px;
   &__greetings {
     margin: 226px auto 0;
-    max-width: 701px;
     @include centering;
     flex-direction: column;
     &-title {
@@ -21,61 +20,9 @@
       margin-top: 50px;
     }
   }
-  
   &__advantages {
-    display: flex;
-    flex-direction: column;
     max-width: 1216px;
-    margin: 200px auto 0;
-    &-title {
-      @include heading(3);
-      text-align: center;
-    }
-  }
-  &__list {
-    margin-top: 70px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: start;
-    &-item{
-      &-title {
-        @include subtitle(3);
-        display: block;
-        max-width: 289px;
-        margin-top: 24px;
-      }
-      &-description {
-        @include text(4);
-        display: block;
-        margin-top: 12px;
-        max-width: 305px;
-      }
-      &-progress {
-        display: flex;
-      }
-      &-order {
-        @include text(6);
-        @include centering;
-        width: 40px;
-        height: 40px;
-        border: 1px solid $white100;
-        border-radius: 50px;
-      }
-      &-line {
-        position: relative;
-        flex: 1;
-        &::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 100%;
-          height: 1px;
-          background: $white100;
-        }
-      }
-    }
+    margin: 200px auto;
   }
   &__technologies {
     max-width: 1216px;
@@ -123,12 +70,15 @@
     margin: 240px auto 0;
   }
   &__reviews {
+    max-width: 1216px;
     margin: 240px auto 0;
   }
   &__feedback {
     max-width: 1216px;
     margin: 240px auto 0;
   }
+
+  
   @include desktop {
     padding: 0 30px;
   }

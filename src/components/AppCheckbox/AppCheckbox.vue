@@ -1,11 +1,11 @@
 <template>
   <div class="checkbox">
     <label for="#" class="checkbox__label" @click="changeState">
-      <input :checked="isCheck" type="checkbox" class="checkbox__label-input">
+      <input :checked="$props.modelValue" type="checkbox" class="checkbox__label-input">
       <span class="checkbox__label-view">
         <SvgIcon class="checkbox__label-icon" :icon="'checkmark'" />
       </span>
-      <span class="checkbox__label-text">{{ $props.label }}</span>
+      <span class="checkbox__label-text" :class="{'checkbox__label-text_invalid': $props.error}">{{ t($props.label || '') }}</span>
     </label>
   </div>
 </template>

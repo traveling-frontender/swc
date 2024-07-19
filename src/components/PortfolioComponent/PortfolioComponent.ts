@@ -1,7 +1,7 @@
 import {computed, defineComponent, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import {Pagination, Navigation } from 'swiper/modules'
+import {Pagination, Navigation, EffectCoverflow } from 'swiper/modules'
 import { useMainStore } from '@/store/main'
 
 import 'swiper/css'
@@ -28,11 +28,11 @@ export default defineComponent({
       currentIndex.value = e.realIndex
     }
     onMounted(() => {
-      slideWidth.value = (document.querySelector('.portfolio__carousel-item') as HTMLElement).offsetWidth + 'px'
+      slideWidth.value = (document.querySelector('.portfolio-slider__carousel-item') as HTMLElement).offsetWidth + 'px'
     })
     return {
       t,
-      modules: [Pagination, Navigation],
+      modules: [Pagination, Navigation, EffectCoverflow],
       next,
       prev,
       projects,

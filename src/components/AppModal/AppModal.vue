@@ -6,10 +6,10 @@
         <SvgIcon class="modal__wrapper-close" icon="close_white" @click="closeModal" />
       </div>
       <div class="modal__wrapper-fields">
-        <AppTextarea :backgroundColor="'#252A33'" :placeholder="t('modal.field.about')" />
+        <AppTextarea :error="v$.about.$error ? t('field.about.error') : '' " v-model="formData.about" :backgroundColor="'#252A33'" :placeholder="t('modal.field.about')" />
         <div class="modal__wrapper-time">
-          <AppInput :mask="'###'" :backgroundColor="'#252A33'" :placeholder="t('modal.field.time')" />
-          <AppSelect       
+          <AppInput  :error="v$.time.$error ? t('field.time.error') : '' " v-model="formData.time" :mask="'###'" :backgroundColor="'#252A33'" :placeholder="t('modal.field.time')" />
+          <AppSelect
           :searchable="false"
           :options="times"
           v-model="currentTime"
@@ -18,12 +18,12 @@
           class="modal__wrapper-select"
            />
         </div>
-        <AppInput :backgroundColor="'#252A33'" :placeholder="t('modal.field.name')" />
-        <AppInput :backgroundColor="'#252A33'" :mask="'+7 ### ### ## ##'" :placeholder="t('feedback.placeholder.phone')" />
-        <AppInputFile :backgroundColor="'#252A33'" />
+        <AppInput  :error="v$.name.$error ? t('field.name.error') : '' " v-model="formData.name" :backgroundColor="'#252A33'" :placeholder="t('modal.field.name')" />
+        <AppInput :error="v$.phone.$error ? t('field.phone.error') : ''" v-model="formData.phone" :backgroundColor="'#252A33'" :mask="'+7 ### ### ## ##'" :placeholder="t('feedback.placeholder.phone')" />
+        <AppInputFile />
       </div>
-      <AppCheckbox class="modal__checkbox" :label="t('feedback.agree')" />
-      <button class="modal__button">{{ t('feedback.send') }}</button>
+      <AppCheckbox :error="v$.agree.$error" v-model="formData.agree" class="modal__checkbox" :label="'feedback.agree'" />
+      <button @click="sendForm" class="modal__button">{{ t('feedback.send') }}</button>
     </div>
   </div>
 </template>

@@ -34,6 +34,9 @@
 .checkbox__label-text {
   @include smallText(5);
   color: $white100;
+  &_invalid {
+    color: #ff4c4c
+  }
 }
 
 .checkbox__label-input:checked + .checkbox__label-view .checkbox__label-icon {

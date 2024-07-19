@@ -66,6 +66,11 @@
       width: auto;
     }
   }
+  @include smallTablet {
+    &__item {
+      max-width: unset;
+    }
+  }
   @include mobile {
     .swiper {
       --swiper-pagination-bullet-width: 40px;  

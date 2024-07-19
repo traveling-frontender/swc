@@ -8,6 +8,7 @@
         <div class="header__navigations-list-content">
           <router-link
           v-for="link in menuLinks"
+          @click="toggleNavigation"
           :key="link.name"
           :to="{ name: link.name }"
           class="header__navigations-item"

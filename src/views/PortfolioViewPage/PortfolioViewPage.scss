@@ -10,7 +10,6 @@
     &-title {
       @include heading(3);
       display: block;
-      max-width: 850px;
     }
     &-images {
       max-height: 600px;
@@ -51,6 +50,7 @@
       }
       &-description {
         @include subtitle(1);
+        display: block;
         margin-top: 24px;
       }
       &-images {

@@ -38,6 +38,9 @@ export default defineComponent({
       navigationStore.$patch({
         navigationStatus: !navigationStore.navigationStatus,
       })
+      if (navigationStore.navigationStatus && mainStore.isMobile) {
+        document.body.classList.add('overflow');
+      } else document.body.classList.remove('overflow')
     }
     watch(
       () => currenLocale.value,

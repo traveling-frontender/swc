@@ -5,42 +5,8 @@
       <span class="service-view__greetings-subtitle">{{ t('services.mobile.subtitle') }}</span>
       <button class="service-view__greetings-order" @click="mainStore.changeStateModal">{{ t('home.order') }}</button>  
     </div>
-    <div class="service-view__advantages">
-      <span class="service-view__advantages-title">{{ t('services.advantages.title') }}</span>
-      <div class="service-view__advantages__list service-view__list">
-        <div class="service-view__list-item">
-          <div class="service-view__list-item-progress">
-            <span class="service-view__list-item-order">1</span>
-            <span class="service-view__list-item-line"></span>
-          </div>
-          <span class="service-view__list-item-title">
-            {{ t('services.advantages.automation') }}
-          </span>
-          <span class="service-view__list-item-description">Lorem ipsum dolor sit amet consectetur. Elit sit amet aliquam mi convallis sed vitae pellentesque.</span>
-        </div>
-        <div class="service-view__list-item">
-          <div class="service-view__list-item-progress">
-            <span class="service-view__list-item-order">2</span>
-            <span class="service-view__list-item-line"></span>
-          </div>
-          <span class="service-view__list-item-title">
-            {{ t('services.advantages.conversion') }}
-          </span>
-          <span class="service-view__list-item-description">Lorem ipsum dolor sit amet consectetur. Elit sit amet aliquam mi convallis sed vitae pellentesque.</span>
-        </div>
-        <div class="service-view__list-item">
-          <div class="service-view__list-item-progress">
-            <span class="service-view__list-item-order">3</span>
-            <span class="service-view__list-item-line"></span>
-          </div>
-          <span class="service-view__list-item-title">
-            {{ t('services.advantages.trust') }}
-          </span>
-          <span class="service-view__list-item-description">Lorem ipsum dolor sit amet consectetur. Elit sit amet aliquam mi convallis sed vitae pellentesque.</span>
-        </div>
-      </div>
-    </div>
-    <StagesComponent :title="'stage.develop.title'" :stages="stages" class="service-view__stages" />
+    <AdvantagesComponent class="service-view__advantages" />
+    <StagesComponent :title="t('stage.develop.title')" :stages="stages" class="service-view__stages" />
     <TechnologiesComponent type="technologies" class="service-view__technologies" />
     <div class="service-view__cost">
       <AppCard class="service-view__cost-wrapper">

@@ -1,14 +1,14 @@
 <template>
   <div class="portfolio-view">
     <div class="portfolio-view__greetings">
-      <span class="portfolio-view__greetings-title">{{ t('portfolio.card.smartHome.title') }}</span>
+      <span class="portfolio-view__greetings-title">{{ t('portfolio.view.smartHome.title') }}</span>
       <img src="@/assets/img/portfolio-1_big.png" alt="" class="portfolio-view__greetings-images">
       <span class="portfolio-view__greetings-description">Lorem ipsum dolor sit amet consectetur. Senectus elit facilisi velit et est et gravida massa vitae. Nunc odio arcu volutpat nibh volutpat. Vitae maecenas enim ut enim dictum quam vel bibendum. Nec diam fermentum amet massa fames tempus ultrices. Non id est sed in amet orci nibh. Facilisis non facilisis in sapien purus vel egestas dictum ullamcorper. Iaculis ornare enim euismod iaculis bibendum feugiat. A odio lectus gravida mauris habitasse elementum neque elit eget. Aliquet leo netus purus urna ultrices. Proin feugiat ut morbi posuere nulla.</span>
   </div>
   <StagesComponent class="portfolio-view__goals" :title="t('stage.goals.title')" :stages="stages" />
   <div class="portfolio-view__stages">
     <div class="portfolio-view__stages-header">
-      <span class="portfolio-view__stages-title">{{ t('stage.develop.title') }}</span>
+      <span class="portfolio-view__stages-title">{{ t('stage.work.title') }}</span>
       <span class="portfolio-view__stages-subtitle">{{ t('stage.develop.subtitle') }}</span>
     </div>
     <div class="portfolio-view__stages-item">

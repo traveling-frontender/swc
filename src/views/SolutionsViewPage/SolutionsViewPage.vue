@@ -54,7 +54,7 @@
         </div>
       </div>
     </div>
-    <StagesComponent class="solution-view__stages" :title="t('stage.develop.title')" :stages="stages" />
+    <StagesComponent class="solution-view__stages" :title="t('stage.project.title')" :stages="stages" />
     <TechnologiesComponent class="solution-view__technologies" :type="'technologies'" />
     <PortfolioComponent class="solution-view__portfolio" />
     <FeedbackComponent class="solution-view__feedback" />

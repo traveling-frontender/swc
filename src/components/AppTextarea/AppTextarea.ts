@@ -11,6 +11,7 @@ export default defineComponent({
     placeholder: String,
     modelValue: String,
     whitePlaceholder: Boolean,
+    error: String,
     coloredBorder: Boolean,
     backgroundColor: String
   },
@@ -19,7 +20,7 @@ export default defineComponent({
     const { t } = useI18n();
     const isFocus = ref(false);
     const update = (e: Event) => {
-      ctx.emit('update:modelValue', (e.target as HTMLInputElement).value)
+      ctx.emit('update:modelValue', (e.target as HTMLInputElement).value);
     }
     return {
       t,

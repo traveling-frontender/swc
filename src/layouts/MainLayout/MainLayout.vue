@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <div id="main-background"></div>
     <AppHeader />
     <main>
       <slot />

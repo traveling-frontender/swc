@@ -7,7 +7,69 @@
     flex-direction: column;
     &-title {
       @include heading(1);
-      white-space: pre-wrap;
+      display: block;
+      overflow: hidden;
+      margin: 0 auto;
+      align-items: center;
+       div {
+        display: block;
+      }
+    span {
+        display: block;
+      width: 0;
+      overflow: hidden;
+      border-right: 2px solid transparent;
+      white-space: nowrap;
+    }
+    
+    .typingEffect__line1 {
+      animation: typing 2s steps(30) forwards, blink 1s 2;
+    }
+    
+    .typingEffect__line2 {
+      &_cancel {
+        animation: unTyping 2.5s steps(35) forwards, blink 1s 3s infinite  !important;
+      }
+      &_started {
+        animation: typing 2.5s steps(35) forwards, blink 1s 0s infinite;
+      }
+      
+    }
+    
+    
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+    @keyframes typing2 {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+    @keyframes unTyping {
+      from {
+        width: 100%;
+      }
+      to {
+        width: 0;
+      }
+    }
+    
+    @keyframes blink {
+      0%, 45% {
+        border-color: transparent;
+      }
+      50%, 100% {
+        border-color: white;
+      }
+    }
     }
     &-description {
       margin-top: 30px;
@@ -97,7 +159,8 @@
     margin-top: 240px;
   }
   &__portfolio {
-    margin-top: 240px;
+    max-width: 1216px;
+    margin: 240px auto 0;
   }
   &__facilities {
     display: flex;
@@ -163,8 +226,6 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
-  }
-  @include mobile {
     &__greetings {
       &-advantages {
         display: grid;
@@ -175,6 +236,8 @@
         flex-direction: column;
       }
     }
+  }
+  @include mobile {
     &__services {
       &-list {
         grid-template-columns: 1fr;

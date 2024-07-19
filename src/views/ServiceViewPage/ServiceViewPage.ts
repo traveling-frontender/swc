@@ -8,16 +8,18 @@ import TechnologiesComponent from '@/components/TechnologiesComponent/Technologi
 import PortfolioComponent from '@/components/PortfolioComponent/PortfolioComponent.vue'
 import ReviewsComponent from '@/components/ReviewsComponent/ReviewsComponent.vue'
 import FeedbackComponent from '@/components/FeedbackComponent/FeedbackComponent.vue'
+import AdvantagesComponent from '@/components/AdvantagesComponent/AdvantagesComponent.vue'
 
 export default defineComponent({
-  name: 'HomePage',
+  name: 'ServiceView',
   components: {
     AppCard,
     StagesComponent,
     TechnologiesComponent,
     PortfolioComponent,
     ReviewsComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    AdvantagesComponent
   },
   setup() {
     const mainStore = useMainStore()

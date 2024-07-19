@@ -2,7 +2,6 @@
   color: $white100;
   &__greetings {
     margin: 226px auto 0;
-    max-width: 900px;
     @include centering;
     flex-direction: column;
     &-title {
@@ -12,7 +11,6 @@
     &-description {
       margin-top: 30px;
       @include subtitle(1);
-      max-width: 598px;
     }
     &-order {
       @include primaryButton;
@@ -37,9 +35,6 @@
       height: 1px;
       background: $stroke;
     }
-    &-actions {
-      max-width: 352px;
-    }
     &-title {
       @include heading(3)
     }
@@ -61,7 +56,6 @@
     &-actions {
       display: flex;
       flex-direction: column;
-      max-width: 400px;
       row-gap: 30px;
     }
     &-title {
@@ -105,6 +99,7 @@
     max-width: 1216px;
     margin: 240px auto;
   }
+
   @include desktop {
     padding: 0 30px;
   }
@@ -112,7 +107,7 @@
     &__greetings {
       margin: 120px auto 0;
     }
-    &__includes, &__technologies, &__portfolio, &__stages {
+    &__includes, &__technologies, &__stages {
       margin: 140px auto 0;
     }
     &__feedback {
@@ -130,7 +125,7 @@
     &__greetings {
       margin: 60px auto 0;
     }
-    &__includes, &__technologies, &__portfolio, &__stages {
+    &__includes, &__technologies, &__stages {
       margin: 70px auto 0;
     }
     &__feedback {
